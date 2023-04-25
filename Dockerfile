@@ -3,8 +3,8 @@ EXPOSE 3000
 WORKDIR /app
 COPY files/* /app/
 
-RUN apt update &&\
-    apt install -y iproute2 wget &&\
+RUN apt-get update &&\
+    apt-get install -y iproute2 wget &&\
     npm install -r package.json &&\
     npm install -g pm2 &&\
     wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
