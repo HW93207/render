@@ -11,5 +11,5 @@ RUN apt-get update &&\
     dpkg -i cloudflared.deb &&\
     rm -f cloudflared.deb &&\
     chmod +x web.js
-
+     
 ENTRYPOINT [ "node", "server.js" ]
