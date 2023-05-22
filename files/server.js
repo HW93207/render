@@ -16,6 +16,18 @@ app.get("/", function (req, res) {
   res.status(200).send("hello world");
 });
 
+//文件系统只读测试
+app.get("/test", function (req, res) {
+  fs.writeFile("./test.txt", "这里是新创建的文件内容!", function (err) {
+    if (err) {
+      res.send("创建文件失败，文件系统权限为只读：" + err);
+    }
+    else {
+      res.send("创建文件成功，文件系统权限为非只读：");
+    }
+  });
+});
+
 // 页面访问密码
 app.use((req, res, next) => {
   const user = auth(req);
@@ -79,18 +91,6 @@ app.get("/info", function (req, res) {
           os.totalmem() / 1000 / 1000 +
           "MB"
       );
-    }
-  });
-});
-
-//文件系统只读测试
-app.get("/test", function (req, res) {
-  fs.writeFile("./test.txt", "这里是新创建的文件内容!", function (err) {
-    if (err) {
-      res.send("创建文件失败，文件系统权限为只读：" + err);
-    }
-    else {
-      res.send("创建文件成功，文件系统权限为非只读：");
     }
   });
 });
