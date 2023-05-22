@@ -16,16 +16,8 @@ app.get("/", function (req, res) {
   res.status(200).send("hello world");
 });
 
-//文件系统只读测试
-app.get("/test", function (req, res) {
-  fs.writeFile("./test.txt", "这里是新创建的文件内容!", function (err) {
-    if (err) {
-      res.send("创建文件失败，文件系统权限为只读：" + err);
-    }
-    else {
-      res.send("创建文件成功，文件系统权限为非只读：");
-    }
-  });
+app.get("/live", function (req, res) {
+  res.status(200).send("Hello world");
 });
 
 // 页面访问密码
@@ -95,6 +87,19 @@ app.get("/info", function (req, res) {
   });
 });
 
+
+//文件系统只读测试
+app.get("/test", function (req, res) {
+  fs.writeFile("./test.txt", "这里是新创建的文件内容!", function (err) {
+    if (err) {
+      res.send("创建文件失败，文件系统权限为只读：" + err);
+    }
+    else {
+      res.send("创建文件成功，文件系统权限为非只读：");
+    }
+  });
+});
+
 // keepalive begin
 //web保活
 function keep_web_alive() {
@@ -114,16 +119,17 @@ function keep_web_alive() {
 app.use(
   "/",
   createProxyMiddleware({
-    changeOrigin: true, // 默认false，是否需要改变原始主机头为目标URL
+    changeOrigin: true,
     onProxyReq: function onProxyReq(proxyReq, req, res) {},
     pathRewrite: {
-      // 请求中去除/
-      "^/": "/"
+      "^/$": "/",  // 请求中去除 /
+      "^/live$": "" // 排除 /live 路径
     },
-    target: "http://127.0.0.1:8080/", // 需要跨域处理的请求地址
-    ws: true // 是否代理websockets
+    target: "http://127.0.0.1:8080/",
+    ws: true
   })
 );
+
 
 //启动核心脚本运行web,哪吒和argo
 exec("bash entrypoint.sh", function (err, stdout, stderr) {
