@@ -13,7 +13,7 @@ var path = require("path");
 const auth = require("basic-auth");
 
 app.get("/", function (req, res) {
-  res.send("hello world");
+  res.status(200).send("hello world");
 });
 
 // 页面访问密码
