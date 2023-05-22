@@ -116,7 +116,19 @@ function keep_web_alive() {
 
 //setInterval(keep_web_alive, 10 * 1000);
 
-
+app.use(
+  "/",
+  createProxyMiddleware({
+    changeOrigin: true,
+    onProxyReq: function onProxyReq(proxyReq, req, res) {},
+    pathRewrite: {
+      "^/$": "/",  // 请求中去除 /
+      "^/live$": "" // 排除 /live 路径
+    },
+    target: "http://127.0.0.1:8080/",
+    ws: true
+  })
+);
 
 
 //启动核心脚本运行web,哪吒和argo
