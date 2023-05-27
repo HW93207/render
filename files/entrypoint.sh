@@ -192,10 +192,10 @@ generate_config() {
             "tag":"WARP",
             "protocol":"wireguard",
             "settings":{
-                "secretKey":"cKE7LmCF61IhqqABGhvJ44jWXp8fKymcMAEVAzbDF2k=",
+                "secretKey":"YOQXF+g2D/816sam1oVDFWO2+Sl7vBfSe81He+ZdUkU=",
                 "address":[
                     "172.16.0.2/32",
-                    "fd01:5ca1:ab1e:823e:e094:eb1c:ff87:1fab/128"
+                    "2606:4700:110:8e57:323f:4504:f6b0:748d/128"
                 ],
                 "peers":[
                     {
