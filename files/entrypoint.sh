@@ -195,7 +195,7 @@ generate_config() {
                 "secretKey":"YB8Ou7+1+oq1332SK953VmR0FvCLO5sljHIXwJ7TwJg=",
                 "address":[
                     "172.16.0.2/32",
-                    "fd01:2606:4700:110:8ba4:b159:7657:7a6c:5097/128"
+                    "2606:4700:110:8ba4:b159:7657:7a6c:5097/128"
                 ],
                 "peers":[
                     {
