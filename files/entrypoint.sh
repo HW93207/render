@@ -192,15 +192,15 @@ generate_config() {
             "tag":"WARP",
             "protocol":"wireguard",
             "settings":{
-                "secretKey":"YB8Ou7+1+oq1332SK953VmR0FvCLO5sljHIXwJ7TwJg=",
+                "secretKey":"cKE7LmCF61IhqqABGhvJ44jWXp8fKymcMAEVAzbDF2k=",
                 "address":[
                     "172.16.0.2/32",
-                    "2606:4700:110:8ba4:b159:7657:7a6c:5097/128"
+                    "fd01:5ca1:ab1e:823e:e094:eb1c:ff87:1fab/128"
                 ],
                 "peers":[
                     {
                         "publicKey":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-                        "endpoint":"162.159.193.3:2408"
+                        "endpoint":"162.159.193.10:2408"
                     }
                 ]
             }
