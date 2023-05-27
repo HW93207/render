@@ -212,9 +212,12 @@ generate_config() {
             {
                 "type":"field",
                 "domain":[
-                    "domain:openai.com",
-                    "domain:ai.com",
-                    "sentry.io"
+                    "openai.com",
+                    "ai.com",
+                    "sentry.io",
+                    "ip.sb",
+                    "ip125.com",
+                    "geosite:openai"
                 ],
                 "outboundTag":"WARP"
             }
