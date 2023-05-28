@@ -201,11 +201,14 @@ generate_config() {
                     {
                         "publicKey":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
                         "endpoint":"engage.cloudflareclient.com:2408",
-                        "allowedIPs":["0.0.0.0/0"],
-                        "reserved":[79,6,3],
-                        "mtu":1280
+                        "allowedIPs": [
+                            "0.0.0.0/0",
+                            "::/0"
+                        ]
                     }
-                ]
+                ],
+                "reserved":[79,6,3],
+                "mtu":1280
             }
         }
     ],
