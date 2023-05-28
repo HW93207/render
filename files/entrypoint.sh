@@ -195,12 +195,15 @@ generate_config() {
                 "secretKey":"YOQXF+g2D/816sam1oVDFWO2+Sl7vBfSe81He+ZdUkU=",
                 "address":[
                     "172.16.0.2/32",
-                    "2606:4700:110:8e57:323f:4504:f6b0:748d/128"
+                    "2606:4700:110:8e44:7a0b:75c0:1fdc:6bcb/128"
                 ],
                 "peers":[
                     {
                         "publicKey":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-                        "endpoint":"162.159.193.10:2408"
+                        "endpoint":"engage.cloudflareclient.com:2408",
+                        "allowedIPs":["0.0.0.0/0"],
+                        "reserved":[79,6,3],
+                        "mtu":1280
                     }
                 ]
             }
